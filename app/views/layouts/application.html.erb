@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <title>Bugtracker</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+
+            <ul class="nav nav-pills">
+
+              <li><%= link_to "All Bugs", bugs_path %></li>
+              <li><%= link_to "New Bug", new_bug_path %></li>
+              <li><%= link_to "My Queue", bugs_path %></li>
+
+            </ul>
+
+
+        </div>
+      </div>
+    </div>
+
+        <div class="container">
+            <p class="notice"><% notice %></p>
+            <p class="alert"><% alert %></p>
+            <%= yield %>
+        </div>
+
+</body>
+</html>

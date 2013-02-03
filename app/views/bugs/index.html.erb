@@ -1,0 +1,34 @@
+<div class="page-header">
+<h1>All Bugs</h1>
+</div>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Bug No</th>
+    <th>Assigned to</th>
+    <th>Status</th>
+    <th>Priority</th>
+    <th>Description</th>
+    <th>Details</th>
+    <th>Created</th>
+    <th>Action</th>
+  </tr>
+
+<% @bugs.each do |bug| %>
+  <tr>
+    <td><%= bug.id %></td>
+    <td><%= bug.user.first_name %></td>
+    <td><%= bug.status %></td>
+    <td><%= bug.priority %></td>
+    <td><%= bug.description %></td>
+    <td><%= bug.details %></td>
+    <td><%= time_ago_in_words(bug.created_at) %></td>
+    <td><%= link_to 'Edit', edit_bug_path(bug), class: "btn btn-primary" %>
+    <%= link_to 'Delete', bug, class: "btn btn-primary", confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+    <div class="form-actions">
+        <%= link_to 'New Bug', new_bug_path, class: "btn btn-primary" %>
+    </div>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Assigned to:</b>
+  <%= @bug.user.first_name %>
+</p>
+
+<p>
+  <b>Reported by:</b>
+  <%= @bug.reported_by %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @bug.description %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%= @bug.details %>
+</p>
+
+
+<%= link_to 'Edit', edit_bug_path(@bug), class: "btn btn-primary" %>
+<%= link_to 'Back', bugs_path, class: "btn btn-primary" %>

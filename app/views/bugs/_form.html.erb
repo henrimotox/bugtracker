@@ -1,0 +1,28 @@
+<%= simple_form_for(@bug, html: { class: "form-horizontal" } ) do |f| %>
+  <% if @bug.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bug.errors.count, "error") %> prohibited this bug from being saved:</h2>
+
+      <ul>
+      <% @bug.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.input :user_id, collection: User.all, label_method: :first_name %>
+
+    <%= f.input :priority, collection: Priority.all, label_method: :priority %>
+
+    <%= f.input :status, collection: Status.all, label_method: :status %>
+
+    <%= f.input :description, :input_html => { :rows => 5 } %>
+
+    <%= f.input :details, :input_html => { :rows => 5 } %>
+
+    <div class="form-actions">
+        <%= f.button :submit %>
+    </div>
+
+<% end %>
