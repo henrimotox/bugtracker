@@ -13,9 +13,9 @@
 
     <%= f.input :user_id, collection: User.all, label_method: :first_name %>
 
-    <%= f.input :priority, collection: Priority.all, label_method: :priority %>
+    <%= f.input :priority_id, collection: Priority.all, label_method: :name %>
 
-    <%= f.input :status, collection: Status.all, label_method: :status %>
+    <%= f.input :status_id, collection: Status.all, label_method: :name %>
 
     <%= f.input :description, :input_html => { :rows => 5 } %>
 

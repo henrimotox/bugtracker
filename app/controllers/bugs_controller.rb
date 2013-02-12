@@ -9,6 +9,7 @@ class BugsController < ApplicationController
       format.json { render json: @bugs }
     end
   end
+  
 
   # GET /bugs/1
   # GET /bugs/1.json

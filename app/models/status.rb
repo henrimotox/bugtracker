@@ -1,3 +1,3 @@
 class Status < ActiveRecord::Base
-  has_many :bug
+  has_many :bugs
 end

@@ -10,7 +10,7 @@
 
 <% @priorities.each do |priority| %>
   <tr>
-    <td><%= priority.priority %></td>
+    <td><%= priority.name %></td>
     <td><%= link_to 'Show', priority %></td>
     <td><%= link_to 'Edit', edit_priority_path(priority) %></td>
     <td><%= link_to 'Destroy', priority, confirm: 'Are you sure?', method: :delete %></td>

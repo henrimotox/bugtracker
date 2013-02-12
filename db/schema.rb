@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130203135849) do
+ActiveRecord::Schema.define(:version => 20130205201820) do
 
   create_table "bugs", :force => true do |t|
     t.string   "assigned_to"
@@ -21,18 +21,18 @@ ActiveRecord::Schema.define(:version => 20130203135849) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "user_id"
-    t.string   "status"
-    t.string   "priority"
+    t.integer  "priority_id"
+    t.integer  "status_id"
   end
 
   create_table "priorities", :force => true do |t|
-    t.string   "priority"
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "statuses", :force => true do |t|
-    t.string   "status"
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

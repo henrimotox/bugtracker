@@ -1,3 +1,7 @@
 class Priority < ActiveRecord::Base
-  has_many :bug
+
+  attr_accessible :name
+  has_many :bugs
+ 
+  
 end
